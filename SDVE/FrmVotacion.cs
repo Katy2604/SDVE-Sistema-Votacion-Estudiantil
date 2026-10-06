@@ -40,6 +40,10 @@ namespace SDVE
             StartPosition = FormStartPosition.CenterScreen;
             Font = new Font("Segoe UI", 10F);
 
+            // Color de fondo general de la ventana y color de letra por defecto
+            BackColor = Color.MidnightBlue;
+            ForeColor = Color.White;
+
             var titulo = new Label
             {
                 Text = "Votacion de alumnos",
@@ -49,7 +53,7 @@ namespace SDVE
             };
 
             // --- Datos del alumno ---
-            var grpAlumno = new GroupBox { Text = "Datos del alumno", Location = new Point(12, 50), Size = new Size(596, 170) };
+            var grpAlumno = new GroupBox { Text = "Datos del alumno", Location = new Point(12, 50), Size = new Size(596, 170), ForeColor = Color.White };
             AgregarCampo(grpAlumno, "ID:", txtId, 28);
             AgregarCampo(grpAlumno, "Grupo:", txtGrupo, 62);
             AgregarCampo(grpAlumno, "Carrera:", txtCarrera, 96);
@@ -76,7 +80,8 @@ namespace SDVE
 
         private static void AgregarCampo(GroupBox grp, string etiqueta, TextBox txt, int y)
         {
-            grp.Controls.Add(new Label { Text = etiqueta, AutoSize = true, Location = new Point(12, y + 3) });
+            grp.Controls.Add(new Label { Text = etiqueta, AutoSize = true, Location = new Point(12, y + 3),
+                ForeColor = Color.White});
             txt.Location = new Point(190, y);
             txt.Width = 390;
             grp.Controls.Add(txt);
@@ -84,7 +89,7 @@ namespace SDVE
 
         private GroupBox CrearSeccion(string convocatoria, List<string> candidatos)
         {
-            var grp = new GroupBox { Text = convocatoria, Size = new Size(560, 98) };
+            var grp = new GroupBox { Text = convocatoria, Size = new Size(560, 98), ForeColor = Color.White };
 
             var combo = new ComboBox { DropDownStyle = ComboBoxStyle.DropDownList, Location = new Point(12, 26), Width = 530 };
             combo.Items.AddRange(candidatos.Cast<object>().ToArray());
