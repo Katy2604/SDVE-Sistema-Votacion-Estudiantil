@@ -71,10 +71,18 @@ namespace SDVE
 
             var btnVotar = new Button { Text = "Emitir voto", Size = new Size(140, 36), Location = new Point(468, 585) };
             btnVotar.Click += BtnVotar_Click;
+
             var btnLimpiar = new Button { Text = "Limpiar", Size = new Size(110, 36), Location = new Point(348, 585) };
             btnLimpiar.Click += (_, _) => LimpiarFormulario();
 
-            Controls.AddRange(new Control[] { titulo, grpAlumno, panelConvocatorias, btnLimpiar, btnVotar });
+            var btnResultados = new Button { Text = "Ver Resultados", Size = new Size(130, 36), Location = new Point(210, 585) };
+            btnResultados.Click += (_, _) =>
+            {
+                var frmResultados = new FrmResultados();
+                frmResultados.Show();
+            };
+            
+            Controls.AddRange(new Control[] { titulo, grpAlumno, panelConvocatorias, btnLimpiar, btnResultados, btnVotar });
             AcceptButton = btnVotar;
         }
 

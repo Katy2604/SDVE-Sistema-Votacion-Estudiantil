@@ -33,10 +33,14 @@ namespace SDVE
             ConstruirInterfaz();
             CargarFiltros();
             Actualizar();
+            var frm = new FrmResultados();
+            frm.Show();
         }
 
         private void ConstruirInterfaz()
         {
+            BackColor = Color.MidnightBlue;
+            ForeColor = Color.White;
             Text = "Resultados de la votacion";
             ClientSize = new Size(1020, 700);
             MinimumSize = new Size(900, 620);
