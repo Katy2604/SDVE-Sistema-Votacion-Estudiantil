@@ -49,6 +49,7 @@
             btnLimpiar.TabIndex = 13;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // btnVotar
             // 
@@ -61,6 +62,7 @@
             btnVotar.TabIndex = 12;
             btnVotar.Text = "Emitir Voto";
             btnVotar.UseVisualStyleBackColor = false;
+            btnVotar.Click += btnVotar_Click;
             // 
             // label2
             // 
@@ -124,6 +126,7 @@
             btnSalir.TabIndex = 19;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click;
             // 
             // Votacion
             // 
